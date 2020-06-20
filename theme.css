@@ -1,0 +1,152 @@
+/**
+ * reset
+ */
+
+html, body {
+  height: 100%;
+  touch-action: manipulation;
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  margin: 0;
+}
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+a img {
+  border: 0;
+  outline: 0;
+}
+
+a, button {
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+}
+
+button {
+  .reset-text();
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+}
+
+img {
+  display: inline-block;
+  vertical-align: top;
+}
+
+svg {
+  display: block;
+  text-anchor: middle;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+address {
+  font-style: inherit;
+}
+
+dl, dd {
+  margin: 0;
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-inline-size: auto;
+}
+
+legend {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+label[for] {
+  cursor: pointer;
+}
+
+input:not([type="checkbox"]):not([type="radio"]), textarea {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+select {
+  cursor: pointer;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+button, input, select, textarea {
+  margin: 0;
+}
+
+input, select, textarea {
+  &:-webkit-autofill, &:-webkit-autofill:hover, &:-webkit-autofill:focus {
+    transition-property: background-color, color;
+    transition-delay: 10000000s;
+  }
+}
+
+html:not(.xt-focus-visible), html.xt-focus-disable {
+  :focus {
+    outline: none;
+  }
+}
+
+/**
+ * styles
+ */
+
+body {
+  overflow: hidden;
+}
+
+.link {
+  display: block;
+  width: 100vw;
+  height: 100vh;
+  background: #021a46;
+}
+
+.media {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.anim-zoom .media {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 750ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
+
+.anim-zoom:hover .media {
+  opacity: .9;
+  transform: scale(1.1);
+  transition: all 500ms cubic-bezier(0.455, 0.030, 0.515, 0.955);
+}
