@@ -18,3 +18,21 @@ var eventLeave = function () {
 }
 
 hotspot.addEventListener('mouseleave', eventLeave);
+
+// favicon
+
+var favicon = document.querySelector('#favicon');
+var faviconDark = document.querySelector('#favicon-dark');
+
+const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)');
+colorSchemeMq.addListener(function(e) {
+  if (e.matches) {
+    favicon.remove();
+    document.head.append(faviconDark);
+  } else {
+    document.head.append(favicon);
+    faviconDark.remove();
+  }
+  const darkModeOn = e.matches;
+  console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
+});
