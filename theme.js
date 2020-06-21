@@ -33,6 +33,4 @@ colorSchemeMq.addListener(function(e) {
     document.head.append(favicon);
     faviconDark.remove();
   }
-  const darkModeOn = e.matches;
-  console.log(`Dark mode is ${darkModeOn ? '🌒 on' : '☀️ off'}.`);
 });
