@@ -5,10 +5,9 @@
 var favicon = document.querySelector('#favicon');
 var faviconDark = document.querySelector('#favicon-dark');
 
-const colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)');
+var colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)');
 
 var changeMq = function(e) {
-  console.log(colorSchemeMq.matches)
   if (colorSchemeMq.matches) {
     favicon.remove();
     document.head.append(faviconDark);
@@ -37,6 +36,7 @@ var eventEnter = function () {
 };
 
 hotspot.addEventListener('mouseenter', eventEnter);
+hotspot.addEventListener('touchstart', eventEnter);
 
 // leave
 
@@ -45,3 +45,4 @@ var eventLeave = function () {
 };
 
 hotspot.addEventListener('mouseleave', eventLeave);
+hotspot.addEventListener('touchend', eventEnter);
