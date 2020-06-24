@@ -2,12 +2,10 @@
  * favicon
  */
 
-var favicon = document.querySelector('#favicon');
-var faviconDark = document.querySelector('#favicon-dark');
-
-var colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)');
-
 var changeMq = function(e) {
+  var colorSchemeMq = window.matchMedia('(prefers-color-scheme: dark)');
+  var favicon = document.querySelector('#favicon');
+  var faviconDark = document.querySelector('#favicon-dark');
   if (colorSchemeMq.matches) {
     favicon.remove();
     document.head.append(faviconDark);
@@ -17,7 +15,6 @@ var changeMq = function(e) {
   }
 };
 
-colorSchemeMq.addListener(changeMq);
 changeMq();
 
 /**
